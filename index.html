@@ -17,8 +17,8 @@
   - Status do curso: no <a class="curso">, troque data-status="ultimas-vagas" por data-status="lista-de-espera"
     e ajuste o texto do selo (.selo) e o texto pronto no link (?text=...). O texto precisa conter o nome do curso
     ("toxina" ou "preenchimento"), é assim que o bot pula o menu.
-  - Links pendentes têm data-pendente. Ao colocar o endereço real em href, apague o atributo data-pendente.
-  - Localização: aparece só quando o <li> perder o atributo hidden.
+  - Links pendentes têm data-pendente (hoje só QUERO SER PACIENTE). Ao colocar o link real em href, apague o atributo data-pendente.
+  - Localização: aponta para o Google Maps com o endereço do Brasília Shopping.
 -->
 <main class="pagina">
 
@@ -69,9 +69,12 @@
     </li>
 
     <li>
-      <a class="btn" data-pendente href="#" target="_blank" rel="noopener">
+      <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/anatomia-dental-e-morfologia-do-sorriso-segunda-edicao/N85610293N?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio" target="_blank" rel="noopener">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v14.5a.5.5 0 0 1-.5.5H6.5A2.5 2.5 0 0 1 4 17.5V4a1 1 0 0 1 1-1Zm1.5 14a.5.5 0 0 0 0 1H17v-1H6.5ZM7 6v2h8V6H7Z"/></svg>
-        <span class="btn-texto">Meu livro</span>
+        <span class="btn-corpo">
+          <span class="btn-texto">Meu livro</span>
+          <span class="meta">Anatomia Dental e Morfologia do Sorriso, 2ª edição</span>
+        </span>
       </a>
     </li>
 
@@ -82,10 +85,13 @@
       </a>
     </li>
 
-    <li hidden>
-      <a class="btn" data-pendente href="#" target="_blank" rel="noopener">
+    <li>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Bras%C3%ADlia%20Shopping%2C%20SCN%20Quadra%205%2C%20Asa%20Norte%2C%20Bras%C3%ADlia%20DF%2070655-775" target="_blank" rel="noopener">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-        <span class="btn-texto">Localização</span>
+        <span class="btn-corpo">
+          <span class="btn-texto">Localização</span>
+          <span class="meta">Brasília Shopping · SCN Quadra 5, Asa Norte</span>
+        </span>
       </a>
     </li>
 
