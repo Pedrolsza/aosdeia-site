@@ -1,0 +1,138 @@
+/* Página de links, uma coluna, feita para celular (a maioria vem do Instagram).
+   Visual único e claro, com a cor do logo da Andreia. */
+:root {
+  --fundo: #f7f1f2;        /* rosado muito claro, puxado para o tom do logo */
+  --papel: #fffdfd;        /* superfície dos botões */
+  --tinta: #2f2024;        /* texto, ameixa quase preta */
+  --tinta-suave: #6f5b61;  /* texto secundário */
+  --marca: #8b5360;        /* mauve do logo */
+  --marca-escuro: #6f3f4b; /* hover / pressionado */
+  --linha: #e6d6da;        /* contornos */
+  --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 16px;
+  line-height: 1.4;
+  padding-block: 40px 32px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-text-size-adjust: 100%;
+}
+
+.pagina {
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Topo */
+.topo { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+.logo { display: block; width: min(260px, 70%); height: auto; }
+.topo h1 {
+  margin: 10px 0 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.75rem;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.sub { margin: 0; color: var(--tinta-suave); font-size: 0.95rem; letter-spacing: 0.03em; }
+
+/* Lista de botões */
+.botoes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.botoes li { min-width: 0; }
+.rotulo {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--marca);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 58px;
+  padding: 14px 18px;
+  border: 1px solid var(--linha);
+  border-radius: 14px;
+  background: var(--papel);
+  color: var(--tinta);
+  text-decoration: none;
+  font-weight: 500;
+  transition: border-color .15s, background-color .15s, transform .15s;
+}
+.btn:hover { border-color: var(--marca); }
+.btn:active { transform: scale(0.985); }
+.btn:focus-visible { outline: 3px solid var(--marca); outline-offset: 3px; }
+
+.ico { width: 22px; height: 22px; flex: none; fill: var(--marca); }
+.btn-texto { min-width: 0; overflow-wrap: anywhere; }
+.btn-corpo { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.meta { font-size: 0.8rem; font-weight: 400; color: var(--tinta-suave); }
+
+/* Botão principal */
+.btn-principal {
+  justify-content: center;
+  min-height: 64px;
+  background: var(--marca);
+  border-color: var(--marca);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  box-shadow: 0 8px 20px -10px rgba(111, 63, 75, .7);
+}
+.btn-principal .ico { fill: #fff; }
+.btn-principal:hover { background: var(--marca-escuro); border-color: var(--marca-escuro); }
+.btn-principal:focus-visible { outline-color: var(--tinta); }
+
+/* Cursos */
+.curso { justify-content: space-between; }
+.curso .btn-texto {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 1.15;
+}
+.selo {
+  flex: none;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.curso[data-status="ultimas-vagas"] .selo { background: var(--marca); color: #fff; }
+.curso[data-status="lista-de-espera"] .selo { background: transparent; color: var(--marca); border: 1px solid var(--marca); }
+
+@media (max-width: 380px) {
+  .curso { flex-wrap: wrap; }
+  .selo { order: -1; }
+}
+
+/* Rodapé */
+.rodape { text-align: center; color: var(--tinta-suave); font-size: 0.8rem; letter-spacing: 0.04em; }
+.rodape p { margin: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}
