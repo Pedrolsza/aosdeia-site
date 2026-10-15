@@ -1,138 +1,199 @@
-/* Página de links, uma coluna, feita para celular (a maioria vem do Instagram).
-   Visual único e claro, com a cor do logo da Andreia. */
+/* Página de links da Profª Dra. Andreia Aosdeia.
+   Cores tiradas do flyer: rosé #A45D6D, rosa claro #E3A1A5, branco e um toque de champanhe.
+   Todos os textos em maiúsculas (pedido da Andreia), feito por CSS. */
 :root {
-  --fundo: #f7f1f2;        /* rosado muito claro, puxado para o tom do logo */
-  --papel: #fffdfd;        /* superfície dos botões */
-  --tinta: #2f2024;        /* texto, ameixa quase preta */
-  --tinta-suave: #6f5b61;  /* texto secundário */
-  --marca: #8b5360;        /* mauve do logo */
-  --marca-escuro: #6f3f4b; /* hover / pressionado */
-  --linha: #e6d6da;        /* contornos */
+  --rose: #a45d6d;
+  --rose-fundo-alto: #bf7f8d;
+  --rose-fundo-baixo: #7d4150;
+  --rose-claro: #e3a1a5;
+  --rose-escuro: #7d4150;
+  --marfim: #fffaf7;
+  --champanhe: #dfc08a;
+  --champanhe-escuro: #bf9b55;
+  --tinta: #2f2024;
+  --tinta-suave: #5f4249;
   --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --fonte-texto: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }
-
-html { color-scheme: light; }
+html { color-scheme: light; background: var(--rose-fundo-baixo); }
 
 body {
   margin: 0;
-  background: var(--fundo);
+  min-height: 100vh;
+  background:
+    radial-gradient(120% 55% at 50% 0%, var(--rose-fundo-alto) 0%, rgba(164, 93, 109, 0) 70%),
+    linear-gradient(180deg, var(--rose) 0%, var(--rose-fundo-baixo) 100%);
+  background-repeat: no-repeat;
   color: var(--tinta);
   font-family: var(--fonte-texto);
   font-size: 16px;
   line-height: 1.4;
-  padding-block: 40px 32px;
+  text-transform: uppercase;
+  padding-block: 44px 36px;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   -webkit-text-size-adjust: 100%;
 }
 
-.pagina {
-  width: 100%;
-  max-width: 440px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+.pagina { position: relative; width: 100%; max-width: 440px; margin-inline: auto; display: flex; flex-direction: column; gap: 30px; isolation: isolate; }
+
+/* Ela, de corpo inteiro, atrás de tudo. Os botões ficam por cima, em destaque. */
+.figura {
+  position: absolute;
+  z-index: -1;
+  top: -12px;
+  left: -16%;
+  height: 700px;
+  pointer-events: none;
+  /* esfuma o fim da foto embaixo e a lateral esquerda, onde o flyer cortava o braço */
+  -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 100%), linear-gradient(90deg, transparent 0, #000 9%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(180deg, #000 78%, transparent 100%), linear-gradient(90deg, transparent 0, #000 9%);
+  mask-composite: intersect;
 }
+.figura img { display: block; height: 100%; width: auto; }
 
 /* Topo */
-.topo { display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; }
-.logo { display: block; width: min(260px, 70%); height: auto; }
+.topo { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; gap: 10px; text-align: right; color: #fff; min-height: 290px; padding-left: 52%; padding-top: 28px; }
 .topo h1 {
-  margin: 10px 0 0;
+  margin: 14px 0 0;
   font-family: var(--fonte-titulo);
-  font-weight: 600;
-  font-size: 1.75rem;
-  letter-spacing: 0.01em;
-  line-height: 1.15;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
   text-wrap: balance;
 }
-.sub { margin: 0; color: var(--tinta-suave); font-size: 0.95rem; letter-spacing: 0.03em; }
+.sub { margin: 0; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.16em; line-height: 1.5; color: rgba(255, 255, 255, .92); }
 
-/* Lista de botões */
-.botoes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+/* Lista */
+.botoes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
 .botoes li { min-width: 0; }
-.rotulo {
-  margin-top: 10px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--marca);
-}
+.divisor { height: 1px; margin-block: 4px; background: linear-gradient(90deg, transparent, rgba(223, 192, 138, .9), transparent); }
 
+/* Linha simples (paciente, livro, Instagram, localização) */
 .btn {
   display: flex;
   align-items: center;
   gap: 14px;
-  min-height: 58px;
-  padding: 14px 18px;
-  border: 1px solid var(--linha);
-  border-radius: 14px;
-  background: var(--papel);
+  min-height: 56px;
+  padding: 12px 22px;
+  border: 1px solid var(--champanhe);
+  border-radius: 999px;
+  background: var(--marfim);
   color: var(--tinta);
   text-decoration: none;
   font-weight: 500;
-  transition: border-color .15s, background-color .15s, transform .15s;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 10px 24px -14px rgba(50, 15, 25, .7);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s;
 }
-.btn:hover { border-color: var(--marca); }
-.btn:active { transform: scale(0.985); }
-.btn:focus-visible { outline: 3px solid var(--marca); outline-offset: 3px; }
-
-.ico { width: 22px; height: 22px; flex: none; fill: var(--marca); }
+.ico { width: 22px; height: 22px; flex: none; fill: var(--rose); }
 .btn-texto { min-width: 0; overflow-wrap: anywhere; }
 .btn-corpo { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
-.meta { font-size: 0.8rem; font-weight: 400; color: var(--tinta-suave); }
+.meta { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.08em; line-height: 1.35; color: var(--tinta-suave); }
 
 /* Botão principal */
 .btn-principal {
   justify-content: center;
-  min-height: 64px;
-  background: var(--marca);
-  border-color: var(--marca);
-  color: #fff;
+  min-height: 68px;
+  border-color: #f3dc8f;
+  /* ouro metálico: reflexo claro, corpo dourado profundo, sombra cobreada */
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0) 38%, rgba(255, 246, 205, .55) 48%, rgba(255, 255, 255, 0) 58%),
+    linear-gradient(180deg, #f1d57a 0%, #d4a62e 42%, #b4801f 78%, #cf9f35 100%);
+  color: #2a1a0c;
   font-weight: 600;
-  font-size: 1.05rem;
-  letter-spacing: 0.06em;
-  box-shadow: 0 8px 20px -10px rgba(111, 63, 75, .7);
+  font-size: 1.02rem;
+  letter-spacing: 0.16em;
+  box-shadow: 0 0 0 0 rgba(255, 244, 214, .55), 0 14px 30px -12px rgba(50, 15, 25, .8);
+  animation: pulso 3.2s ease-in-out infinite;
 }
-.btn-principal .ico { fill: #fff; }
-.btn-principal:hover { background: var(--marca-escuro); border-color: var(--marca-escuro); }
-.btn-principal:focus-visible { outline-color: var(--tinta); }
+.btn-principal .ico { fill: #2a1a0c; }
 
-/* Cursos */
-.curso { justify-content: space-between; }
-.curso .btn-texto {
+@keyframes pulso {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 244, 214, .5), 0 14px 30px -12px rgba(50, 15, 25, .8); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 244, 214, 0), 0 14px 30px -12px rgba(50, 15, 25, .8); }
+}
+
+/* Cartão de curso: a faixa rosa clara repete a faixa "CURSO" do flyer */
+.curso {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--champanhe);
+  border-radius: 18px;
+  background: var(--marfim);
+  color: var(--tinta);
+  text-decoration: none;
+  box-shadow: 0 14px 30px -16px rgba(50, 15, 25, .75);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.faixa { display: block; padding: 7px 20px; }
+.selo { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; }
+.curso[data-status="ultimas-vagas"] .faixa { background: var(--rose-claro); color: var(--tinta); }
+.curso[data-status="lista-de-espera"] .faixa { background: #efe1d6; color: var(--rose-escuro); }
+.curso-corpo { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; padding: 16px 20px 18px; }
+.curso-nome {
   font-family: var(--fonte-titulo);
   font-weight: 600;
-  font-size: 1.3rem;
-  line-height: 1.15;
-}
-.selo {
-  flex: none;
-  padding: 5px 11px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 1.45rem;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
-  white-space: nowrap;
+  line-height: 1.1;
+  margin-bottom: 4px;
 }
-.curso[data-status="ultimas-vagas"] .selo { background: var(--marca); color: #fff; }
-.curso[data-status="lista-de-espera"] .selo { background: transparent; color: var(--marca); border: 1px solid var(--marca); }
+.acao {
+  flex: none;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--rose);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+  transition: background-color .2s;
+}
+.curso[data-status="lista-de-espera"] .acao { background: transparent; color: var(--rose-escuro); box-shadow: inset 0 0 0 1px var(--rose-escuro); }
 
 @media (max-width: 380px) {
-  .curso { flex-wrap: wrap; }
-  .selo { order: -1; }
+  .curso-corpo { flex-direction: column; align-items: stretch; }
+  .acao { text-align: center; }
+}
+
+/* Interação só em quem tem mouse; foco visível sempre */
+@media (hover: hover) {
+  .btn:hover, .curso:hover { transform: translateY(-2px); box-shadow: 0 0 22px -2px rgba(255, 233, 190, .55), 0 16px 30px -14px rgba(50, 15, 25, .8); }
+  .btn-principal:hover { animation-play-state: paused; }
+  .curso:hover .acao { background: var(--rose-escuro); color: #fff; }
+}
+.btn:active, .curso:active { transform: scale(0.985); }
+.btn:focus-visible, .curso:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* Entrada da página: uma sequência só, no carregamento */
+@media (prefers-reduced-motion: no-preference) {
+  .botoes > li { animation: entra .6s cubic-bezier(.2, .7, .2, 1) both; }
+  .botoes > li:nth-child(2) { animation-delay: .05s; }
+  .botoes > li:nth-child(3) { animation-delay: .12s; }
+  .botoes > li:nth-child(4) { animation-delay: .19s; }
+  .botoes > li:nth-child(n+5) { animation-delay: .26s; }
+  @keyframes entra { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-principal { animation: none; }
+  .btn, .curso, .acao { transition: none; }
 }
 
 /* Rodapé */
-.rodape { text-align: center; color: var(--tinta-suave); font-size: 0.8rem; letter-spacing: 0.04em; }
-.rodape p { margin: 0; }
+.rodape { display: flex; justify-content: center; }
+.logo { display: block; width: 150px; height: auto; opacity: .95; }
 
-@media (prefers-reduced-motion: reduce) {
-  .btn { transition: none; }
+/* Telas largas: ela inteira ao lado, os botões sobrepõem a borda dela */
+@media (min-width: 780px) {
+  .pagina { max-width: 900px; padding-left: 400px; }
+  .figura { left: 0; top: -20px; height: 960px; }
+  .topo { min-height: 0; padding: 20px 0 0 0; align-items: flex-start; text-align: left; margin-left: -20px; }
+  .botoes { margin-left: -20px; }
 }

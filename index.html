@@ -15,15 +15,19 @@
   COMO EDITAR (sem segredo nenhum neste arquivo):
   - Número do bot: procure 556199044284 (3 links). Para testar com o 9 extra, troque por 5561999044284.
   - Status do curso: no <a class="curso">, troque data-status="ultimas-vagas" por data-status="lista-de-espera"
-    e ajuste o texto do selo (.selo) e o texto pronto no link (?text=...). O texto precisa conter o nome do curso
+    e ajuste o texto do selo (.selo), a ação (.acao) e o texto pronto no link (?text=...). O texto precisa conter o nome do curso
     ("toxina" ou "preenchimento"), é assim que o bot pula o menu.
   - Links pendentes têm data-pendente (hoje só QUERO SER PACIENTE). Ao colocar o link real em href, apague o atributo data-pendente.
   - Localização: aponta para o Google Maps com o endereço do Brasília Shopping.
 -->
 <main class="pagina">
 
+  <picture class="figura">
+    <source srcset="assets/andreia.webp" type="image/webp">
+    <img src="assets/andreia.png" width="538" height="1090" alt="Profª Dra. Andreia Aosdeia">
+  </picture>
+
   <header class="topo">
-    <img class="logo" src="assets/logo.png" width="320" height="217" alt="Aosdeia, Estética Dental e Facial">
     <h1>Profª Dra. Andreia Aosdeia</h1>
     <p class="sub">Cursos de estética facial em Brasília/DF</p>
   </header>
@@ -33,38 +37,46 @@
     <li>
       <a class="btn btn-principal" href="https://wa.me/556199044284?text=Ol%C3%A1!%20Quero%20me%20matricular%20em%20um%20curso." target="_blank" rel="noopener">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm5.8 14.06c-.25.7-1.45 1.34-2 1.4-.52.06-1.17.09-1.89-.12a17 17 0 0 1-1.7-.63c-3-1.3-4.94-4.33-5.09-4.53-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37h.57c.18 0 .43-.07.67.51.25.6.84 2.05.91 2.2.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.38-.45.51-.15.15-.3.31-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.09 1.32 2.39 1.47.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.18 1.42Z"/></svg>
-        <span class="btn-texto">QUERO ME MATRICULAR</span>
+        <span class="btn-texto">Quero me matricular</span>
       </a>
     </li>
 
-    <li class="rotulo" aria-hidden="true">Cursos</li>
+    <li class="divisor" aria-hidden="true"></li>
 
     <li>
-      <a class="btn curso" data-status="ultimas-vagas" href="https://wa.me/556199044284?text=Ol%C3%A1!%20Quero%20me%20matricular%20no%20curso%20de%20Toxina%20Botul%C3%ADnica." target="_blank" rel="noopener">
-        <span class="btn-corpo">
-          <span class="btn-texto">Toxina Botulínica</span>
-          <span class="meta">1 dia · 10 horas · turma de 23/10</span>
+      <a class="curso" data-status="ultimas-vagas" href="https://wa.me/556199044284?text=Ol%C3%A1!%20Quero%20me%20matricular%20no%20curso%20de%20Toxina%20Botul%C3%ADnica." target="_blank" rel="noopener">
+        <span class="faixa"><span class="selo">Últimas vagas</span></span>
+        <span class="curso-corpo">
+          <span class="btn-corpo">
+            <span class="curso-nome">Toxina Botulínica</span>
+            <span class="meta">1 dia, 10 horas</span>
+            <span class="meta">Turma de 23/10</span>
+          </span>
+          <span class="acao">Quero minha vaga</span>
         </span>
-        <span class="selo">Últimas vagas</span>
       </a>
     </li>
 
     <li>
-      <a class="btn curso" data-status="lista-de-espera" href="https://wa.me/556199044284?text=Ol%C3%A1!%20Quero%20entrar%20na%20lista%20de%20espera%20do%20curso%20de%20Preenchimento%20Facial." target="_blank" rel="noopener">
-        <span class="btn-corpo">
-          <span class="btn-texto">Preenchimento Facial</span>
-          <span class="meta">2 dias · 20 horas</span>
+      <a class="curso" data-status="lista-de-espera" href="https://wa.me/556199044284?text=Ol%C3%A1!%20Quero%20entrar%20na%20lista%20de%20espera%20do%20curso%20de%20Preenchimento%20Facial." target="_blank" rel="noopener">
+        <span class="faixa"><span class="selo">Lista de espera</span></span>
+        <span class="curso-corpo">
+          <span class="btn-corpo">
+            <span class="curso-nome">Preenchimento Facial</span>
+            <span class="meta">2 dias, 20 horas</span>
+            <span class="meta">Próxima turma</span>
+          </span>
+          <span class="acao">Entrar na lista</span>
         </span>
-        <span class="selo">Lista de espera</span>
       </a>
     </li>
 
-    <li class="rotulo" aria-hidden="true">Mais</li>
+    <li class="divisor" aria-hidden="true"></li>
 
     <li>
       <a class="btn" data-pendente href="#" target="_blank" rel="noopener">
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2c-4.1 0-8 2-8 5v2h16v-2c0-3-3.9-5-8-5Z"/></svg>
-        <span class="btn-texto">QUERO SER PACIENTE</span>
+        <span class="btn-texto">Quero ser paciente</span>
       </a>
     </li>
 
@@ -90,7 +102,7 @@
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
         <span class="btn-corpo">
           <span class="btn-texto">Localização</span>
-          <span class="meta">Brasília Shopping · SCN Quadra 5, Asa Norte</span>
+          <span class="meta">Brasília Shopping, SCN Quadra 5, Asa Norte</span>
         </span>
       </a>
     </li>
@@ -98,7 +110,7 @@
   </ul>
 
   <footer class="rodape">
-    <p>Aosdeia · Estética Dental e Facial</p>
+    <img class="logo" src="assets/logo.png" width="320" height="217" alt="Aosdeia, Estética Dental e Facial">
   </footer>
 
 </main>
