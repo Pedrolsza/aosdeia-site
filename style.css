@@ -43,30 +43,31 @@ body {
 .figura {
   position: absolute;
   z-index: -1;
-  top: -12px;
-  left: -16%;
-  height: 700px;
+  top: -20px;
+  left: -9%;
+  height: 540px;
   pointer-events: none;
-  /* esfuma o fim da foto embaixo e a lateral esquerda, onde o flyer cortava o braço */
-  -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 100%), linear-gradient(90deg, transparent 0, #000 9%);
+  /* esfuma a foto embaixo (some antes dos botoes) e a lateral esquerda, onde o flyer cortava o braco */
+  -webkit-mask-image: linear-gradient(180deg, #000 36%, transparent 68%), linear-gradient(90deg, transparent 0, #000 9%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(180deg, #000 78%, transparent 100%), linear-gradient(90deg, transparent 0, #000 9%);
+  mask-image: linear-gradient(180deg, #000 36%, transparent 68%), linear-gradient(90deg, transparent 0, #000 9%);
   mask-composite: intersect;
 }
 .figura img { display: block; height: 100%; width: auto; }
 
 /* Topo */
-.topo { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; gap: 10px; text-align: right; color: #fff; min-height: 290px; padding-left: 52%; padding-top: 28px; }
+.topo { display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start; gap: 10px; text-align: right; color: #fff; min-height: 330px; padding-left: 46%; padding-top: 20px; }
 .topo h1 {
   margin: 14px 0 0;
   font-family: var(--fonte-titulo);
   font-weight: 500;
-  font-size: 1.5rem;
-  letter-spacing: 0.12em;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 14px rgba(70, 20, 35, .35);
   line-height: 1.2;
   text-wrap: balance;
 }
-.sub { margin: 0; font-size: 0.68rem; font-weight: 400; letter-spacing: 0.16em; line-height: 1.5; color: rgba(255, 255, 255, .92); }
+.sub { margin: 0; font-size: 0.66rem; font-weight: 400; letter-spacing: 0.14em; line-height: 1.5; color: rgba(255, 255, 255, .92); }
 
 /* Lista */
 .botoes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
@@ -159,6 +160,8 @@ body {
 .curso[data-status="lista-de-espera"] .acao { background: transparent; color: var(--rose-escuro); box-shadow: inset 0 0 0 1px var(--rose-escuro); }
 
 @media (max-width: 380px) {
+  .btn-principal { font-size: .92rem; letter-spacing: .1em; padding-inline: 16px; }
+  .topo h1 { font-size: 1.25rem; }
   .curso-corpo { flex-direction: column; align-items: stretch; }
   .acao { text-align: center; }
 }
@@ -193,7 +196,7 @@ body {
 /* Telas largas: ela inteira ao lado, os botões sobrepõem a borda dela */
 @media (min-width: 780px) {
   .pagina { max-width: 900px; padding-left: 400px; }
-  .figura { left: 0; top: -20px; height: 960px; }
+  .figura { left: 0; top: -20px; height: 960px; -webkit-mask-image: linear-gradient(180deg, #000 78%, transparent 100%), linear-gradient(90deg, transparent 0, #000 9%); mask-image: linear-gradient(180deg, #000 78%, transparent 100%), linear-gradient(90deg, transparent 0, #000 9%); }
   .topo { min-height: 0; padding: 20px 0 0 0; align-items: flex-start; text-align: left; margin-left: -20px; }
   .botoes { margin-left: -20px; }
 }
