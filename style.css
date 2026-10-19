@@ -101,19 +101,19 @@ body {
 .btn-principal {
   justify-content: center;
   min-height: 68px;
-  border-color: #f3dc8f;
-  /* ouro metálico: reflexo claro, corpo dourado profundo, sombra cobreada */
+  border-color: #fff;
+  /* rosé da paleta: marfim com reflexo, descendo para o rosa claro */
   background:
-    linear-gradient(115deg, rgba(255, 255, 255, 0) 38%, rgba(255, 246, 205, .55) 48%, rgba(255, 255, 255, 0) 58%),
-    linear-gradient(180deg, #f1d57a 0%, #d4a62e 42%, #b4801f 78%, #cf9f35 100%);
-  color: #2a1a0c;
+    linear-gradient(115deg, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, .7) 48%, rgba(255, 255, 255, 0) 58%),
+    linear-gradient(180deg, #fffaf7 0%, #f6d3d4 55%, #e3a1a5 100%);
+  color: var(--rose-escuro);
   font-weight: 600;
   font-size: 1.02rem;
   letter-spacing: 0.16em;
-  box-shadow: 0 0 0 0 rgba(255, 244, 214, .55), 0 14px 30px -12px rgba(50, 15, 25, .8);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, .6), 0 14px 30px -12px rgba(50, 15, 25, .8);
   animation: pulso 3.2s ease-in-out infinite;
 }
-.btn-principal .ico { fill: #2a1a0c; }
+.btn-principal .ico { fill: var(--rose-escuro); }
 
 @keyframes pulso {
   0%, 100% { box-shadow: 0 0 0 0 rgba(255, 244, 214, .5), 0 14px 30px -12px rgba(50, 15, 25, .8); }
@@ -222,7 +222,7 @@ body {
   flex: none;
   width: 1.1em;
   height: 1.4em;
-  background: linear-gradient(180deg, var(--rose-claro) 0%, var(--rose) 55%, var(--rose-escuro) 100%);
+  background: linear-gradient(180deg, #ffd43b 0%, #ff8a1f 38%, #ff4a2b 72%, #d6204a 100%);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath d='M12.6 0c.7 5.2-1.6 8.4-4.3 11.6C5.6 14.8 3 18 3 22.2 3 27.6 7 32 12.2 32 17.6 32 21 27.8 21 23c0-3.4-1.5-5.8-3.2-7.8.2 2.3-.5 4-2 5.1.7-4.3-.6-9.6-3.2-20.3z'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath d='M12.6 0c.7 5.2-1.6 8.4-4.3 11.6C5.6 14.8 3 18 3 22.2 3 27.6 7 32 12.2 32 17.6 32 21 27.8 21 23c0-3.4-1.5-5.8-3.2-7.8.2 2.3-.5 4-2 5.1.7-4.3-.6-9.6-3.2-20.3z'/%3E%3C/svg%3E") center / contain no-repeat;
   transform-origin: 50% 100%;
