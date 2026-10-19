@@ -220,9 +220,9 @@ body {
 .curso[data-status="promocao"] .selo::before {
   content: "";
   flex: none;
-  width: 0.95em;
-  height: 1.2em;
-  background: var(--rose-escuro);
+  width: 1.1em;
+  height: 1.4em;
+  background: linear-gradient(180deg, #ffb21e 0%, #ff6a1a 50%, #e12b1f 100%);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath d='M12.6 0c.7 5.2-1.6 8.4-4.3 11.6C5.6 14.8 3 18 3 22.2 3 27.6 7 32 12.2 32 17.6 32 21 27.8 21 23c0-3.4-1.5-5.8-3.2-7.8.2 2.3-.5 4-2 5.1.7-4.3-.6-9.6-3.2-20.3z'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'%3E%3Cpath d='M12.6 0c.7 5.2-1.6 8.4-4.3 11.6C5.6 14.8 3 18 3 22.2 3 27.6 7 32 12.2 32 17.6 32 21 27.8 21 23c0-3.4-1.5-5.8-3.2-7.8.2 2.3-.5 4-2 5.1.7-4.3-.6-9.6-3.2-20.3z'/%3E%3C/svg%3E") center / contain no-repeat;
   transform-origin: 50% 100%;
