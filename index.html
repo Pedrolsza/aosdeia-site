@@ -32,7 +32,9 @@
   - Status do curso: no <a class="curso">, troque data-status="ultimas-vagas" por data-status="lista-de-espera"
     e ajuste o texto do selo (.selo), a ação (.acao) e o texto pronto no link (?text=...). O texto precisa conter o nome do curso
     ("toxina" ou "preenchimento"), é assim que o bot pula o menu.
-  - Links pendentes têm data-pendente (hoje só QUERO SER PACIENTE). Ao colocar o link real em href, apague o atributo data-pendente.
+  - Paciente modelo: o cartão da promoção leva ao bot com o texto "Quero ser paciente modelo..." (o bot reconhece "paciente modelo").
+    Para mudar período ou valores, edite o cartão aqui E o bloco paciente_modelo do config do bot (config/andreia-aosdeia.json).
+  - Links pendentes têm data-pendente (hoje nenhum). Ao colocar o link real em href, apague o atributo data-pendente.
   - Localização: aponta para o Google Maps com o endereço do Brasília Shopping.
 -->
 <main class="pagina">
@@ -86,14 +88,24 @@
       </a>
     </li>
 
-    <li class="divisor" aria-hidden="true"></li>
-
     <li>
-      <a class="btn" data-pendente href="#" target="_blank" rel="noopener">
-        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2c-4.1 0-8 2-8 5v2h16v-2c0-3-3.9-5-8-5Z"/></svg>
-        <span class="btn-texto">Quero ser paciente</span>
+      <a class="curso promo" data-status="promocao" href="https://wa.me/556199044284?text=Ol%C3%A1!%20Quero%20ser%20paciente%20modelo%20na%20promo%C3%A7%C3%A3o%20de%20outubro%20e%20novembro." target="_blank" rel="noopener">
+        <span class="faixa"><span class="selo">Promoção de outubro e novembro</span></span>
+        <span class="curso-corpo">
+          <span class="btn-corpo">
+            <span class="curso-nome">Paciente modelo</span>
+            <span class="precos">
+              <span class="preco"><span class="preco-nome">Toxina Botulínica</span><span class="preco-valor">R$ 500</span></span>
+              <span class="preco"><span class="preco-nome">Preenchimento Facial</span><span class="preco-valor">R$ 500 <small>a seringa</small></span></span>
+              <span class="preco"><span class="preco-nome">Bioestimulador</span><span class="preco-valor">R$ 800</span></span>
+            </span>
+          </span>
+          <span class="acao">Quero ser paciente</span>
+        </span>
       </a>
     </li>
+
+    <li class="divisor" aria-hidden="true"></li>
 
     <li>
       <a class="btn" href="https://hotmart.com/pt-br/marketplace/produtos/anatomia-dental-e-morfologia-do-sorriso-segunda-edicao/N85610293N?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio" target="_blank" rel="noopener">

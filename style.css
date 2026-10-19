@@ -159,6 +159,18 @@ body {
 }
 .curso[data-status="lista-de-espera"] .acao { background: transparent; color: var(--rose-escuro); box-shadow: inset 0 0 0 1px var(--rose-escuro); }
 
+/* Cartão de promoção (paciente modelo): faixa champanhe e lista de valores */
+.curso[data-status="promocao"] .faixa { background: linear-gradient(90deg, #ead29b, var(--champanhe)); color: var(--tinta); }
+.promo .curso-corpo { flex-direction: column; align-items: stretch; gap: 16px; }
+.promo .btn-corpo { gap: 0; }
+.promo .acao { text-align: center; padding-block: 11px; font-size: 0.7rem; }
+.precos { display: flex; flex-direction: column; gap: 9px; margin-top: 12px; }
+.preco { display: flex; align-items: baseline; gap: 8px; }
+.preco-nome { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px; font-size: 0.74rem; letter-spacing: 0.05em; color: var(--tinta-suave); }
+.preco-nome::after { content: ""; flex: 1; min-width: 14px; border-bottom: 1px dotted rgba(164, 93, 109, .5); transform: translateY(-3px); }
+.preco-valor { flex: none; font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.2rem; letter-spacing: 0.04em; color: var(--rose-escuro); white-space: nowrap; }
+.preco-valor small { display: block; text-align: right; margin-top: -2px; font-family: var(--fonte-texto); font-weight: 500; font-size: 0.58rem; letter-spacing: 0.1em; color: var(--tinta-suave); }
+
 @media (max-width: 380px) {
   .btn-principal { font-size: .92rem; letter-spacing: .1em; padding-inline: 16px; }
   .topo h1 { font-size: 1.25rem; }
