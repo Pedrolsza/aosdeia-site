@@ -1,0 +1,50 @@
+/* Página de política de privacidade: mesmo fundo rosé da página de links, texto em cartão marfim (sem caixa alta, para ler). */
+:root {
+  --rose: #a45d6d;
+  --rose-fundo-alto: #bf7f8d;
+  --rose-fundo-baixo: #7d4150;
+  --rose-escuro: #7d4150;
+  --marfim: #fffaf7;
+  --champanhe: #dfc08a;
+  --tinta: #2f2024;
+  --tinta-suave: #5f4249;
+  --fonte-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Jost", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+* { box-sizing: border-box; }
+html { color-scheme: light; background: var(--rose-fundo-baixo); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(120% 40% at 50% 0%, var(--rose-fundo-alto) 0%, rgba(164, 93, 109, 0) 70%),
+    linear-gradient(180deg, var(--rose) 0%, var(--rose-fundo-baixo) 100%);
+  background-repeat: no-repeat;
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding: 28px max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px));
+  -webkit-text-size-adjust: 100%;
+}
+.pagina { max-width: 720px; margin-inline: auto; }
+.voltar { display: inline-block; margin-bottom: 18px; color: #fff; font-size: .9rem; letter-spacing: .06em; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .55); }
+.voltar:hover, .voltar:focus-visible { border-bottom-color: #fff; outline: none; }
+.cartao {
+  background: var(--marfim);
+  border: 1px solid var(--champanhe);
+  border-radius: 22px;
+  padding: clamp(22px, 5vw, 44px);
+  box-shadow: 0 18px 40px -22px rgba(50, 15, 25, .85);
+}
+h1 { margin: 0 0 4px; font-family: var(--fonte-titulo); font-weight: 600; font-size: clamp(1.9rem, 6vw, 2.5rem); line-height: 1.1; color: var(--rose-escuro); letter-spacing: .01em; }
+.atualizado { margin: 0 0 26px; font-size: .85rem; color: var(--tinta-suave); }
+h2 { margin: 30px 0 6px; font-family: var(--fonte-titulo); font-weight: 600; font-size: 1.45rem; line-height: 1.2; color: var(--rose-escuro); }
+p { margin: 0 0 12px; max-width: 68ch; }
+ul { margin: 0 0 12px; padding-left: 1.2em; max-width: 68ch; }
+li { margin-bottom: 6px; }
+a { color: var(--rose-escuro); text-underline-offset: 3px; }
+a:focus-visible, .voltar:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+.destaque { margin: 14px 0; padding: 14px 16px; background: #f6e7e4; border-left: 4px solid var(--rose); border-radius: 8px; max-width: 68ch; }
+.destaque p { margin: 0; }
+@media (max-width: 380px) { body { font-size: .95rem; } }

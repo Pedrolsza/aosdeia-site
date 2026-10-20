@@ -238,3 +238,8 @@ body {
   .curso[data-status="ultimas-vagas"] .selo::before,
   .curso[data-status="promocao"] .selo::before { animation: none; background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2032'%3E%3Cdefs%3E%3ClinearGradient%20id='o'%20x1='0'%20y1='0'%20x2='0'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23e8262d'/%3E%3Cstop%20offset='.45'%20stop-color='%23ff6a1a'/%3E%3Cstop%20offset='1'%20stop-color='%23ffb21e'/%3E%3C/linearGradient%3E%3ClinearGradient%20id='i'%20x1='0'%20y1='0'%20x2='0'%20y2='1'%3E%3Cstop%20offset='0'%20stop-color='%23ffd84a'/%3E%3Cstop%20offset='1'%20stop-color='%23fff6cf'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath%20fill='url(%23o)'%20d='M12%201C13%207%2020%2012%2020%2021C20%2027%2016.5%2031%2012%2031C7.5%2031%204%2027%204%2021C4%2016%207%2013.5%208.5%209C9.5%2011.5%2010.5%2012.5%2011%2013.5C11.8%209.5%2011.4%205%2012%201Z'%3E%3C/path%3E%3Cpath%20fill='url(%23i)'%20d='M12%2014C12.8%2018%2016%2020%2016%2024C16%2027.5%2014.2%2030%2012%2030C9.8%2030%208%2027.5%208%2024C8%2021.5%209.5%2020%2010.3%2018C10.8%2019.3%2011.3%2019.8%2011.6%2020C11.9%2018%2011.7%2016%2012%2014Z'%3E%3C/path%3E%3C/svg%3E"); }
 }
+
+/* Link discreto para a política de privacidade */
+.legal { margin: -10px 0 0; text-align: center; font-size: 0.62rem; letter-spacing: 0.12em; }
+.legal a { color: rgba(255, 255, 255, .82); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .4); padding-bottom: 1px; }
+.legal a:hover, .legal a:focus-visible { color: #fff; border-bottom-color: #fff; outline: none; }
