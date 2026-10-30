@@ -135,6 +135,7 @@ body {
 .faixa { display: block; padding: 7px 20px; }
 .selo { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; }
 .curso[data-status="ultimas-vagas"] .faixa { background: var(--rose-claro); color: var(--tinta); }
+.curso[data-status="avaliacao"] .faixa { background: var(--rose-claro); color: var(--tinta); }
 .curso[data-status="lista-de-espera"] .faixa { background: #efe1d6; color: var(--rose-escuro); }
 .curso-corpo { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; padding: 16px 20px 18px; }
 .curso-nome {
