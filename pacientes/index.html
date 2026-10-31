@@ -32,8 +32,9 @@
   - Como o bot entende o texto pronto de cada botão (config/andreia-aosdeia.json do bot):
       "agendar uma avaliação", facial/dental ou paciente modelo -> menu de pacientes (ou lista da promoção, se disser "paciente modelo")
     Se mudar o texto de um botão, mantenha essas palavras.
-  - Promoção: o cartão leva ao bot com o texto "Quero ser paciente modelo...". Para mudar período ou valores, edite o cartão aqui
-    E o bloco paciente_modelo do config do bot. Quando a promoção acabar, apague o cartão (o bot para de falar dela se o bloco sair do config).
+  - Promoção: o cartão leva ao bot com o texto "Quero ser paciente modelo...". Nunca coloque preço, porcentagem ou "a partir de"
+    no cartão (risco de denúncia ao CRO): os valores só aparecem na conversa do WhatsApp. Para mudar o período ou os procedimentos,
+    edite o cartão aqui E o bloco paciente_modelo do config do bot. Quando a promoção acabar, apague o cartão (o bot para de falar dela se o bloco sair do config).
   - Localização: não incluída de propósito (confirmar com a Andreia o endereço de atendimento dos pacientes antes de colocar).
 -->
 <main class="pagina">
@@ -65,11 +66,12 @@
         <span class="curso-corpo">
           <span class="btn-corpo">
             <span class="curso-nome">Paciente modelo</span>
-            <span class="precos">
-              <span class="preco"><span class="preco-nome">Toxina Botulínica</span><span class="preco-valor">R$ 500</span></span>
-              <span class="preco"><span class="preco-nome">Preenchimento Facial</span><span class="preco-valor">R$ 500 <small>a seringa</small></span></span>
-              <span class="preco"><span class="preco-nome">Bioestimulador</span><span class="preco-valor">R$ 800</span></span>
+            <span class="procedimentos">
+              <span class="procedimento">Toxina Botulínica</span>
+              <span class="procedimento">Preenchimento Facial</span>
+              <span class="procedimento">Bioestimulador</span>
             </span>
+            <span class="meta">Condições especiais: fale com a gente</span>
           </span>
           <span class="acao">Quero ser paciente</span>
         </span>

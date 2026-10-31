@@ -33,7 +33,8 @@
     e ajuste o texto do selo (.selo), a ação (.acao) e o texto pronto no link (?text=...). O texto precisa conter o nome do curso
     ("toxina" ou "preenchimento"), é assim que o bot pula o menu.
   - Paciente modelo: o cartão da promoção leva ao bot com o texto "Quero ser paciente modelo..." (o bot reconhece "paciente modelo").
-    Para mudar período ou valores, edite o cartão aqui E o bloco paciente_modelo do config do bot (config/andreia-aosdeia.json).
+    Nunca coloque preço, porcentagem ou "a partir de" no cartão (risco de denúncia ao CRO): os valores só aparecem na conversa do WhatsApp.
+    Para mudar o período ou os procedimentos, edite o cartão aqui E o bloco paciente_modelo do config do bot (config/andreia-aosdeia.json).
   - Links pendentes têm data-pendente (hoje nenhum). Ao colocar o link real em href, apague o atributo data-pendente.
   - Localização: aponta para o Google Maps com o endereço do Brasília Shopping.
 -->
@@ -108,11 +109,12 @@
         <span class="curso-corpo">
           <span class="btn-corpo">
             <span class="curso-nome">Paciente modelo</span>
-            <span class="precos">
-              <span class="preco"><span class="preco-nome">Toxina Botulínica</span><span class="preco-valor">R$ 500</span></span>
-              <span class="preco"><span class="preco-nome">Preenchimento Facial</span><span class="preco-valor">R$ 500 <small>a seringa</small></span></span>
-              <span class="preco"><span class="preco-nome">Bioestimulador</span><span class="preco-valor">R$ 800</span></span>
+            <span class="procedimentos">
+              <span class="procedimento">Toxina Botulínica</span>
+              <span class="procedimento">Preenchimento Facial</span>
+              <span class="procedimento">Bioestimulador</span>
             </span>
+            <span class="meta">Condições especiais: fale com a gente</span>
           </span>
           <span class="acao">Quero ser paciente</span>
         </span>
